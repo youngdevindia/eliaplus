@@ -1,5 +1,40 @@
 {
-    "python.analysis.include": [
-        "elia_chat/**/*.py",
-    ]
+    // ---- General Editor Settings ----
+    "editor.rulers": [88], // Optional: A visual guide for line length (Black's default)
+    "files.trimTrailingWhitespace": true,
+
+    // ---- Python-Specific Settings ----
+    "[python]": {
+        // Set Ruff as the default formatter (it's faster than Black)
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        // Format the file whenever you save it
+        "editor.formatOnSave": true,
+        // Automatically fix linting errors and organize imports on save
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+        }
+    },
+
+    // ---- Pylance/IntelliSense Configuration ----
+    // Tell Pylance where your source code is for better import resolution
+    "python.analysis.extraPaths": [
+        "./elia_chat"
+    ],
+    // Exclude the virtual environment from analysis to save resources
+    "python.analysis.exclude": [
+        ".venv"
+    ],
+
+    // ---- Testing Configuration ----
+    // Set up VS Code's test discovery and runner for pytest
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+
+    // ---- Textual TUI Debugging ----
+    // Enable the Textual console for the integrated debugger
+    "python.textual.debug": true
 }

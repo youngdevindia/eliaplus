@@ -51,3 +51,19 @@ allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["elia_chat"]
+
+# Add this section to your pyproject.toml
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+
+[tool.ruff.lint]
+# Select a good default set of rules
+select = ["E", "F", "W", "I", "UP"]
+ignore = []
+
+[tool.ruff.format]
+# Use black-compatible formatting
+quote-style = "double"
+indent-style = "space"

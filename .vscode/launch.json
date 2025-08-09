@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Elia: Launch TUI",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "elia_chat",
+            "args": [],
+            "justMyCode": true,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Elia: Launch Inline",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "elia_chat",
+            "args": [
+                "-i",
+                "What is the Zen of Python?"
+            ],
+            "justMyCode": true,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Elia: Import ChatGPT Data",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "elia_chat",
+            "args": [
+                "import",
+                "path/to/your/conversations.json"
+            ],
+            "justMyCode": true,
+            "console": "internalConsole"
+        }
+    ]
+}
